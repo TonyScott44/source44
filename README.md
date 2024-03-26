@@ -1,2 +1,2 @@
 # source44
-Personal JS Source Code
+JS Refresher + Syntax Reference
