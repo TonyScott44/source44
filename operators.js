@@ -3,6 +3,7 @@
 // ================================================================================================================= //
 // Arithmetic Operators
 // ----------------------------------------------------------- //
+console.log('Arithmetic Operators');
 // Arithmetic operators are used to perform calculations. 
 // Expression: Produces a value
 // Operand: Individual values calculated according to the operator
@@ -51,8 +52,18 @@ console.log(a);         // Proof that it decremented after printing to console
 
 // Assignment Operators
 // ----------------------------------------------------------- //
-
-
+console.log('Assignment Operators'); // =, '+=', '-=', '*=', etc.
+let numA = 1;         // Here is a simple assignment of 1 to numA
+numA++;               // This example, using the increment operator, is equivalent to numA = numA + 1.
+console.log(numA);
+// Let's say we wanted to add 5 to numA.  We can use either the simple addition expression or an
+//  addition assignment operator.  The increment operator cannot be used to do this.
+numA = null;
+numA = numA + 5;     // Simple addition expression
+numA += 5;           // A different way to perform the operation above is using the addition 
+                     //  assignment operator.
+numA *= 10;          // Multiplication assignment operator
+console.log(numA);  
 
 // Comparison Operators
 // ----------------------------------------------------------- //
