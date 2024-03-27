@@ -81,4 +81,51 @@ vehicleColors[1] = 44;
 console.log(vehicleColors);
 console.log(vehicleColors.length); // Use length keyword to get length of an array
 console.log(typeof(vehicleColors)); // Arrays are objects with properties(keywords)
+// ----------------------------------------------------------- //
+// Functions performs a task (ex. calculate something)
+// Functions don't require semicolons at the end.  
+// Functions take in arguments (function call)/parameters (function declaration)
+// There are two ways to declare a function, traditional and ES6 (arrow functions)
 
+// Traditional
+function greeter (fName,lName){  // Function declaration with two paramaters
+   console.log('Hello ' + fName + ' ' + lName);
+}
+greeter('Tony','Scott'); // Function call with two arguments 
+
+// ES6 Arrow Function using template literals to create string output
+location = (city, state) => {
+   console.log(`Location: ${city}, ${state}`);
+}
+location('Atlanta', 'Georgia');
+
+// Calculate the square of a number
+square = num => {
+   return num*num;
+};
+console.log(square(4));
+
+/* Output 
+My name is undefined
+My name is Tony Scott.
+My name is Anthony Charles Scott Jr.
+2028
+null
+number
+string
+2023
+Tesla
+Model Y
+{ year: 2023, make: 'Tesla', model: 'Model Y' }
+{ year: '2024', make: 'Tesla', model: 'Model X' }
+[ 'year', 'make', 'model' ]
+Tesla
+undefined
+[ 'blue' ]
+[ 'blue', 44 ]
+2
+object
+Hello Tony Scott
+Location: Atlanta, Georgia
+16
+*/
