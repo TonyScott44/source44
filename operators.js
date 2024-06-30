@@ -35,7 +35,6 @@ console.log(++b);       // Increments value by 1 first, then prints to console
 console.log(b++);       // Prints value to console, then increments by 1
 console.log(b);         // Proof that it incremented after printing to console  
 
-
 // Decrement Operator '--'
 console.log(--a);       // Decrements value by 1 first, then prints to console
 console.log(a--);       // Prints value to console, then decrements by one
@@ -74,7 +73,6 @@ console.log(numA);
 2
 100 */
 
-
 // Comparison Operators
 // ----------------------------------------------------------- //
 pt('Comparison Operators');
@@ -106,7 +104,6 @@ console.log(compObj);
 { test1: false, test2: true, test4: true, test5: true }
 { test1: false, test2: true, test3: true }
 */
-
 
 // Logical Operators
 // ----------------------------------------------------------- //
