@@ -75,7 +75,7 @@ console.log(numA);
 
 
 
-// Bitwise Operators
+// Bitwise Operator
 // ----------------------------------------------------------- //
 
 
