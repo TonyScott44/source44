@@ -3,8 +3,6 @@ pt = topic => {
     console.log(topic);
 }
 
-
-
 // Alongside variables, operators are utilized to create expressions to implement logic/algorithms
 // Operator Types: Arithmetic, Assignment, Comparison, Logical, and Bitwise
 // ================================================================================================================= //
@@ -118,6 +116,3 @@ pt('Logical Operators');
 // Bitwise Operators
 // ----------------------------------------------------------- //
 pt('Bitwise Operators');
-
-
-
