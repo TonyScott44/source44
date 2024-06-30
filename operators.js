@@ -89,7 +89,10 @@ let relObj = {
 }
 console.log(relObj);
 
-// Comparison - Equality 
+/* Comparison Operator Console Output
+{ test1: false, test2: true, test4: true, test5: true } */
+
+// Equality 
 // '==' Loose Equality (Converts operand2 to the type of operand1 then compares the values)
 // '===' Strict Equality (Compares type and value)
 let compVar1 = 4, compVar2 = 12;
@@ -100,10 +103,21 @@ let compObj = {
 }
 console.log(compObj);
 
-/* Comparison Operator Console Output
-{ test1: false, test2: true, test4: true, test5: true }
+/* Equality Operator Console Output
 { test1: false, test2: true, test3: true }
 */
+
+// Ternary/Conditional Operator
+
+/* If school year is 12 (high school senior) or below, course level is grade school. 
+   If school year is 13 (college freshman) or higher, course level is college.       */
+
+let schoolYear = 16; // school year
+courseLevel = schoolYear > 12 ? 'College' : 'Grade School';  
+console.log(courseLevel);
+
+
+
 
 // Logical Operators
 // ----------------------------------------------------------- //
