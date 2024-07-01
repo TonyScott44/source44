@@ -116,12 +116,27 @@ let schoolYear = 16; // school year
 courseLevel = schoolYear > 12 ? 'College' : 'Grade School';  
 console.log(courseLevel);
 
-
-
+/* Ternary Operator Console Output
+'College'
+*/
 
 // Logical Operators
 // ----------------------------------------------------------- //
 pt('Logical Operators');
+
+let lOperand1 = true, lOperand2 = false;
+// Logical opeators are used to make decisions based on multople conditions
+
+// Logical AND (&&) Returns True if both operands are True
+console.log(lOperand1 && lOperand2); 
+// Logical OR (||) Returns True if one of the operands is True
+console.log(lOperand1 || lOperand2);
+
+// NOT (!) 
+let noTest = false;
+console.log(noTest);
+let yesTest = !noTest;
+console.log(yesTest);
 
 
 // Bitwise Operator
