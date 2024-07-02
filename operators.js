@@ -375,4 +375,14 @@ Execute Access: Granted
 // A future challenge with the bitwise operators will be to use the bitwise AND operator to change permissions (instead of the >= operator).
 
 // Operator Precedence
-// https://www.w3schools.com/js/js_precedence.asp
+/* Arithmetic Operators
+Exponentiations are executed before multiplications
+Multiplications and divisions are executed before additions and subtractions
+Val	Operator	Description	Example
+13	**	Exponentiation ES2016	10 ** 2
+12	*	Multiplication	10 * 5
+12	/	Division	10 / 5
+12	%	Division Remainder	10 % 5
+11	+	Addition	10 + 5
+11	-	Subtraction	10 - 5
+11	+	Concatenation	"John" + "Doe" */
