@@ -187,3 +187,189 @@ Red
 // Bitwise Operator
 // ----------------------------------------------------------- //
 pt('Bitwise Operators');
+// Bitwise operators are very similar to logical operators but they
+// work on the individual bits of a number (8 bits = 1 byte)
+// We humans generally use numbers in decimal format (1,2,etc).
+// Computers understand these numbers in binary format, a combination of 0s and 1s (00000001,00000010, etc.)
+// 1 = 00000001
+// 2 = 00000010 
+
+// Bitwise results can be thought of as indicators.
+
+console.log(1 | 2);   // Bitwise OR '|'
+// Here's what happens:            One could attach an indicator conceptually to each bit
+//      1 = 00000001               ex. member for 5+ years
+//      2 = 00000010               ex. flown over 100k miles
+//          ||||||||   If the bit is on ('1'), the respective/resulting bit is on.
+//          vvvvvvvv
+// Result = 00000011 = 3           ex. Gold status...This is because it met at least one of the requirements. Condition be based on >=1
+
+console.log(1 | 3);   // Bitwise OR '|'
+// Here's what happens:
+//      1 = 00000001
+//      3 = 00000011
+//          ||||||||   If the bit is on ('1'), the respective/resulting bit is on.
+//          vvvvvvvv
+// Result = 00000011 = 3
+
+console.log(1 & 2);   // Bitwise AND '&'
+// Here's what happens:
+//      1 = 00000001      
+//      2 = 00000010      
+//          ||||||||
+//          vvvvvvvv
+// Result = 00000000 = 0  This is because the bits don't line up (Think of a table that lines up each byte on top
+//                        of each other in rows.  If there's s match of '1's in any column, the result is 00000001 or 1
+//                        If not, it's 00000000 or 0). 
+
+console.log(1 & 3);   // Bitwise AND '&'
+// Here's what happens:
+//      1 = 00000001                                                                                ex. card member 10+ yrs
+//      3 = 00000011                                                                                ex. spent 25k + last yr
+//          ||||||||
+//          vvvvvvvv
+// Result = 00000001 = 1  This is because the first bit lines up, unlike the following example:     ex. indicates centurion 
+//                                                                                                      status because both 
+//                                                                                                      requirements were met
+
+console.log(1 & 4);   // Bitwise AND '&'
+// Here's what happens:
+//      1 = 00000001
+//      4 = 00000100
+//          ||||||||
+//          vvvvvvvv
+// Result = 00000000 = 0  This is because non of the  bits line up
+
+// Another simple example of using bitwise operators in the real world is with user access controls (read, write, execute).
+// 00000100 = Read Access
+// 00000010 = Write Access
+// 00000001 = Execute Access
+// Technically, users with write access will have read access (not vice verse) and users with execute access will have full access.
+// 1 = 00000001 = Read Access Only
+// 2 = 00000011 = Read + Write Access
+// 4 = 00000111 = Read + Write + Execute Access
+console.log(0 | 0); // All Access Denied
+console.log(0 | 1); // Read Access Only
+console.log(1 | 2);   // Read + Write Access
+console.log(3 | 4);   // Read + Write + Execute Access
+
+// Helper Functions
+setReadAccess = (userAccess) => {
+    userAccess = myAccess | readAccess ? 1 : userAccess;
+    myAccess = myAccess | readAccess ? 'Read Access Set' : 'No Change';
+    console.log(`Read Access: ${myAccess}`);
+    myAccess = userAccess;
+}
+setWriteAccess = userAccess => {
+    userAccess = myAccess | writeAccess ? 3 : userAccess;
+    myAccess = myAccess | writeAccess ? 'Write Access Set' : 'No Change';
+    console.log(`Write Access: ${myAccess}`);
+    myAccess = userAccess;
+}
+setExecuteAccess = userAccess => {
+    userAccess = myAccess | executeAccess ? 7 : userAccess;
+    myAccess = myAccess | executeAccess ? 'Execute Access Set' : 'No Change';
+    console.log(`Execute Access: ${myAccess}`);
+    myAccess = userAccess;
+}
+chkReadAccess = accessByte => {
+    let userAccess = accessByte;
+    accessByte = accessByte >= readAccess ? 'Granted' : 'Denied';
+    console.log(`Read Access: ${accessByte}`);
+    myAccess = accessByte | userAccess;  // Cleanup
+}
+chkWriteAccess = accessByte => {
+    let userAccess = accessByte;
+    accessByte = accessByte >= writeAccess ? 'Granted' : 'Denied';
+    console.log(`Write Access: ${accessByte}`);
+    myAccess = accessByte | userAccess;  // Cleanup
+}
+chkExecuteAccess = accessByte => {
+    let userAccess = accessByte;
+    accessByte = accessByte >= executeAccess ? 'Granted' : 'Denied';
+    console.log(`Execute Access: ${accessByte}`);
+    myAccess = accessByte | userAccess;  // Cleanup
+}
+
+const noAccess = 0, readAccess = 1, writeAccess = 3, executeAccess = 7;
+let myAccess = 0;
+
+console.log(myAccess) // Check access, shouldn't have any
+
+// Set Read Access
+setReadAccess(myAccess);
+console.log(myAccess)
+// Check Execute Access
+chkExecuteAccess(myAccess);
+console.log(myAccess)
+// Check Write Access
+chkWriteAccess(myAccess);
+console.log(myAccess)
+// Check Read Access
+chkReadAccess(myAccess);
+console.log(myAccess)
+
+// Set Write Access
+setWriteAccess(myAccess);
+console.log(myAccess)
+// Check Read Access
+chkReadAccess(myAccess);
+console.log(myAccess)
+// Check Write Access
+chkWriteAccess(myAccess);
+console.log(myAccess)
+// Check Execute Access
+chkExecuteAccess(myAccess);
+console.log(myAccess)
+
+// Set Execute Access
+setExecuteAccess(myAccess);
+console.log(myAccess)
+// Check Read Access
+chkReadAccess(myAccess);
+console.log(myAccess)
+// Check Write Access
+chkWriteAccess(myAccess);
+console.log(myAccess)
+// Check Execute Access
+chkExecuteAccess(myAccess);
+console.log(myAccess)
+
+/* Bitwise Operator Console Output
+3
+3
+0
+1
+0
+0
+1
+3
+7
+0
+Read Access: Read Access Set
+1
+Execute Access: Denied
+1
+Write Access: Denied
+1
+Read Access: Granted
+1
+Write Access: Write Access Set
+3
+Read Access: Granted
+3
+Write Access: Granted
+3
+Execute Access: Denied
+3
+Execute Access: Execute Access Set
+7
+Read Access: Granted
+7
+Write Access: Granted
+7
+Execute Access: Granted
+7
+*/
+
+// A future challenge with the bitwise operators will be to use the bitwise AND operator to change permissions (instead of the >= operator).
