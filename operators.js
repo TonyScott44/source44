@@ -373,3 +373,6 @@ Execute Access: Granted
 */
 
 // A future challenge with the bitwise operators will be to use the bitwise AND operator to change permissions (instead of the >= operator).
+
+// Operator Precedence
+// https://www.w3schools.com/js/js_precedence.asp
