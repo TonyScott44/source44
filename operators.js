@@ -132,12 +132,57 @@ console.log(lOperand1 && lOperand2);
 // Logical OR (||) Returns True if one of the operands is True
 console.log(lOperand1 || lOperand2);
 
-// NOT (!) 
+// NOT (!) The logical NOT (!) (logical complement, negation) operator takes truth to falsity and vice versa. 
+// It is typically used with boolean (logical) values. 
 let noTest = false;
 console.log(noTest);
 let yesTest = !noTest;
 console.log(yesTest);
 
+// Logical Operators w/ Non-Boolean Values
+
+console.log(false || undefined);
+console.log(false || 'Canvas Realty Group, LLC'); // With a string
+console.log(false || 1); // With a number
+
+/* Falsy
+--------
+- false
+- undefined
+- null
+- 0
+-''
+- NaN
+*/
+
+// Truthy = Anything that is not Falsy :)
+
+// Short-Circuiting: In a statement utilizing multiple OR operators '||',
+// execution ends after the first truthy match.
+console.log(false || true || true ); // Execution of this statement ends after the
+                                     // first 'true' is matched as truthy.  The 
+                                     // second 'true' is not evaluated or 
+                                     // executed upon.
+
+// Real world example that can take the user's preferred background color
+// or defaults to blue if no color has been selected by the user.
+let userColor1 = undefined;
+let userColor2 = 'Red';
+let defaultColor = 'Blue';
+let currentColor = userColor1 || userColor2 || defaultColor;
+console.log(currentColor);
+
+/* Logical Operator Console Output
+false
+true
+false
+true
+undefined
+Canvas Realty Group, LLC
+1
+true
+Red
+*/
 
 // Bitwise Operators
 // ----------------------------------------------------------- //
