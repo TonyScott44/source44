@@ -386,3 +386,14 @@ Val	Operator	Description	Example
 11	+	Addition	10 + 5
 11	-	Subtraction	10 - 5
 11	+	Concatenation	"John" + "Doe" */
+
+
+// Operators Exercise, Swapping Variables
+let colorA = 'red',
+    colorB = 'blue';
+
+// Brute Force
+let storeColor = colorA;
+colorA = colorB;
+colorB = storeColor;
+console.log(`colorA = ${colorA} colorB = ${colorB}`);
