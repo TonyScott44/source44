@@ -99,7 +99,7 @@ cntTru = arr => {
 }
 console.log(cntTru([undefined,5,NaN,true,0,false,'','niice!',null])); // Output:3
 //=========================================================================================
-/* String Properties
+/* Show Strings
     Write a function that takes in an object and returns its string properties.
 */
 const car = {
