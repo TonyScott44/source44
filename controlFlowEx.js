@@ -51,3 +51,73 @@ console.log(speedTrap(75));
 console.log(speedTrap(129));
 console.log(speedTrap(130));
 console.log(speedTrap(152));
+/* Output
+    Ok
+    Ok
+    Points: 1
+    Points: 11
+    License Suspended
+    License Suspended
+*/
+//=========================================================================================
+/* Even & Odd #s
+Write a function that takes a maximum number and displays every number leading up to the
+max.  The numbers displayed must also include "EVEN" or "ODD" to the right of the number.
+*/
+showNumbers = max => {
+    let numType;
+    for(i = 0;i <= max; i++){
+        numType = i % 2 === 0 ? 'EVEN' : 'ODD';
+        console.log(i, numType);
+    }
+}
+showNumbers(10);
+/* Output
+    0 EVEN
+    1 ODD
+    2 EVEN
+    3 ODD
+    4 EVEN
+    5 ODD
+    6 EVEN
+    7 ODD
+    8 EVEN
+    9 ODD
+    10 EVEN
+*/
+//=========================================================================================
+/* Count Truthy
+    Write a function that takes an array of various values & types and returns the
+    # of truthy items.
+*/
+cntTru = arr => {
+    let cnt = 0;
+    for(el of arr){
+        cnt = el ? cnt + 1 : cnt; 
+    }
+    return cnt;
+}
+console.log(cntTru([undefined,5,NaN,true,0,false,'','niice!',null])); // Output:3
+//=========================================================================================
+/* String Properties
+    Write a function that takes in an object and returns its string properties.
+*/
+const car = {
+    year: 2023,
+    make: 'Tesla',
+    model: 'Model Y',
+    performance: true
+}
+showStrings = obj => {
+    console.log(obj);
+    for(key in obj){
+        if(typeof(obj[key]) === 'string') console.log(key, obj[key]);
+    }
+}
+showStrings(car);
+/* Output
+    { year: 2023, make: 'Tesla', model: 'Model Y', performance: true }
+    make Tesla
+    model Model Y
+*/
+//=========================================================================================
