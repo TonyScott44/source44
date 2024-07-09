@@ -121,3 +121,38 @@ showStrings(car);
     model Model Y
 */
 //=========================================================================================
+/* Sum of Multiples of 3 & 5
+    Write a function that takes a maximum number and adds up all the multiples of 3 & 5
+    leading up to the max number
+*/
+mult35 = max => {
+    let sum = 0;
+    for(i = 0; i <= max;i++){
+        sum = i % 3 === 0 ? sum += i : sum;
+        sum = i % 5 === 0 ? sum += i : sum;
+    }
+    return sum;
+}
+
+console.log(mult35(10));  // Output: 33
+//=========================================================================================
+/* Final Grade  
+    Write a function that takes an array of grades and issues a letter Grade based 
+    on grade average.
+    100 - 90: A
+    89  - 80: B
+    79  - 70: C
+    69  - 60: D
+    59  -  0: F
+*/
+finalGrade = grades => {
+    let sum = grades.reduce((acc,curr) => acc + curr);
+    let avg = sum / grades.length;
+    if(avg >= 90 && avg <= 100) return 'A';
+    else if(avg >= 80 && avg <= 89) return 'B';
+    else if(avg >= 70 && avg <= 79) return 'C';
+    else if(avg >= 60 && avg <= 69) return 'D';
+    else return 'F';
+}
+console.log(finalGrade([80,80,50])); // Output: 33
+//=========================================================================================
