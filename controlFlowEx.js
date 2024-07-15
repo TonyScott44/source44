@@ -154,5 +154,65 @@ finalGrade = grades => {
     else if(avg >= 60 && avg <= 69) return 'D';
     else return 'F';
 }
-console.log(finalGrade([80,80,50])); // Output: 33
+console.log(finalGrade([80,80,50])); // Output: C
 //=========================================================================================
+/* Starzy
+    Write a function that that takes in a maximum number (rows of stars).  Leading up to 
+    the maximum number, each row should display the respective number of stars, incrementing
+    the number stars by one for each subsequent row (starting with one).  The end result is
+    a display of stars that kind of looks like a half pyramid.
+*/
+starzy = max => {
+    let starray = [];
+    for(i = 0;i <= max; i++){
+        for(x = 1;x <= i; x++){
+            starray.push('*');
+        }
+        console.log(starray.join(' '));
+        starray = [];
+    }
+}
+starzy(20);
+/* Output
+    *
+    * *
+    * * *
+    * * * *
+    * * * * *
+    * * * * * *
+    * * * * * * *
+    * * * * * * * *
+    * * * * * * * * *
+    * * * * * * * * * *
+    * * * * * * * * * * *
+    * * * * * * * * * * * *
+    * * * * * * * * * * * * *
+    * * * * * * * * * * * * * *
+    * * * * * * * * * * * * * * *
+    * * * * * * * * * * * * * * * *
+    * * * * * * * * * * * * * * * * *
+    * * * * * * * * * * * * * * * * * *
+    * * * * * * * * * * * * * * * * * * *
+    * * * * * * * * * * * * * * * * * * * *
+*/
+//=========================================================================================
+/* Optimus Prime
+    Given a maximum number, write a program that displays (on seperate lines) each prime
+    number leading up to the given maximum number.
+*/
+optimusPrime = max => {
+   let cnt = 0;
+    for(i = 2;i <= max;i++){
+        // console.log('Number',i);
+        for(x = 1;x <= i; x++){
+            if(i % x === 0){
+                cnt++;
+            } 
+            // console.log('Sub#',x);
+        }
+        if(cnt <= 2) console.log(i);  // 2 as in 1 and the number itself
+        // console.log(i, 'count: ' + cnt);
+        cnt = 0;
+    }
+}
+optimusPrime(100);
