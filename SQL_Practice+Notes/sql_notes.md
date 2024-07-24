@@ -9,7 +9,7 @@ Connection Method: Standard (TCP/IP) is the default method<br>
 Hostname: 127.0.0.1 is the address of the local machine <br>
 Port: 3306 is the default port for the MySQL server<br>
 Username: root is the username for admin
-Password: this pw was set during MySQL installation
+Password: this pw was set during MySQL installation<br>
 <br>
 Administration tab <br>
 Used to do administrative work such as starting/stopping a server, importing/exporting data, etc.<br>
@@ -24,9 +24,10 @@ used to make reports. <br>
 <br>
 Stored Procedures & Functions: Little programs that we store inside of our DB for querying data.<br>
 Ex. procedue for getting all the customers in a given city, so we call that procedure to get all<br>
-the customers in San Francisco, and this will return all the customers in San Francisco.
+the customers in San Francisco, and this will return all the customers in San Francisco.<br>
 <br>
 Every column in a table represents a DB field (ex. customer_id). <br>
+<br>
 Every row in the table is referred to as a record. <br>
  
 
