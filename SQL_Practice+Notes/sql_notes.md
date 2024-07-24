@@ -1,4 +1,4 @@
-<h1>#SQL Practice + Notes</h1><br>
+<h1>#SQL Practice + Notes</h1>
 <p>Tools Utilized: MySQL Community Server, MySQL Workbench</p>
 <h2>Setup New Connection</h2>
 <p>Connection Method: Standard (TCP/IP) is the default method<br>
