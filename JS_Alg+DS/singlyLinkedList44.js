@@ -29,17 +29,20 @@ class SinglyLinkedList{
         if(this.length === 0) return undefined;
         let current = this.head;
         let prev;
-        while(current){
-            if(current){   
-                if(current.next === null){
+        while(current){  
+            if(current.next === null){
+                if(this.length === 1){
+                    this.head = null;
+                    this.tail = null;
+                } else {
                     prev.next = null;
                     this.tail = prev;
-                    this.length--;
-                    return this;
                 }
-                prev = current;
-                current = current.next;
+                this.length--;
+                return this;
             }
+            prev = current;
+            current = current.next;
         }
     }
     // Traverse
@@ -66,6 +69,13 @@ list.push('Linked Lists');
 list.push('Graphs');
 list.traverse();
 
+console.log(list.pop());
+console.log(list.pop());
+console.log(list.pop());
+console.log(list.pop());
+console.log(list.pop());
+list.traverse();
+console.log(list.pop());
 console.log(list.pop());
 console.log(list.pop());
 
