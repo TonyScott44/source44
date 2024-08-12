@@ -71,13 +71,6 @@ list.traverse();
 
 console.log(list.pop());
 console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
-list.traverse();
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
 
 /*
 Output:
