@@ -45,6 +45,30 @@ class SinglyLinkedList{       // This class creates a fresh singly linked list, 
             current = current.next;    // Set current to the next item in the list
         }
     }
+    // Shift: Removes node from the beginning of list
+    shift(){
+        if (this.length === 0) return undefined;
+        let oldHead = this.head;
+        this.head = oldHead.next;
+        this.length--;
+        if(this.length === 0)this.tail = null;
+        return oldHead.val; 
+    }
+
+    unshift(val){
+        if(this.length === 0){
+            return this.push(val);
+        } else{
+            let newNode = new Node(val);
+            let oldHead = this.head;
+            newNode.next = oldHead;
+            this.head = newNode;
+            this.length++;
+            return this;
+        }
+    }
+
+
     // Traverse
     traverse(){                             // Traverse allows us to go through each node in the list from beginning to end (in case we're looking for something specific)
         let current = this.head;            // We need to start at the beginning of the list to start this process, set current to head
@@ -59,7 +83,7 @@ class SinglyLinkedList{       // This class creates a fresh singly linked list, 
 }
 
 let list = new SinglyLinkedList()
-list.push('Dynamic Programming');
+console.log(list.push('Dynamic Programming'));
 list.push('Data Structures');
 list.push('Algorithms');
 list.push('Merge Sort');
@@ -70,11 +94,28 @@ list.push('Graphs');
 list.traverse();
 
 console.log(list.pop());
-console.log(list.pop());
+console.log(list.shift());
+console.log(list);
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.unshift('Systems Design'));
+console.log(list.unshift("You're Hired!!!"));
+
+
 
 /*
 Output:
 
+SinglyLinkedList {
+  head: Node { val: 'Dynamic Programming', next: null },
+  tail: Node { val: 'Dynamic Programming', next: null },
+  length: 1
+}
 Dynamic Programming
 Data Structures
 Algorithms
@@ -91,13 +132,34 @@ SinglyLinkedList {
   tail: Node { val: 'Linked Lists', next: null },
   length: 7
 }
+Dynamic Programming
 SinglyLinkedList {
   head: Node {
-    val: 'Dynamic Programming',
-    next: Node { val: 'Data Structures', next: [Node] }
+    val: 'Data Structures',
+    next: Node { val: 'Algorithms', next: [Node] }
   },
-  tail: Node { val: 'Recursion', next: null },
+  tail: Node { val: 'Linked Lists', next: null },
   length: 6
+}
+Data Structures
+Algorithms
+Merge Sort
+Radix Sort
+Recursion
+Linked Lists
+undefined
+SinglyLinkedList {
+  head: Node { val: 'Systems Design', next: null },
+  tail: Node { val: 'Systems Design', next: null },
+  length: 1
+}
+SinglyLinkedList {
+  head: Node {
+    val: "You're Hired!!!",
+    next: Node { val: 'Systems Design', next: null }
+  },
+  tail: Node { val: 'Systems Design', next: null },
+  length: 2
 }
 */
 
